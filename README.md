@@ -2,7 +2,7 @@ TODO LIST
 
 This mod should make use of GeckoLib where it can, it's a really useful tool!
 
-##Mobs
+##Mobs  
 - Nicholas the Renegade  
 Model and code not started just yet.
 - Elf  
@@ -15,10 +15,10 @@ Nicholas the Renegade hovers around and attacks by swinging his lumbar axe at th
 Elves just attack like a zombie would when they see players.  
 Ballistic Penguins when attacking propel themselves using their wings then explode on impact.  
 
-##Dimensions
+##Dimensions  
 The Santas Workshop dimension is just an ender island like dimension but with daylight where it nearly always snows, it's a little misty where like a white fog.  
 The only biome you will find in this dimension is the North Pole biome.  
 
-##Biomes
+##Biomes  
 The North Pole biome is the only biome in the mod for now, it's should consist of a layer of snow blocks, grass then dirt and stone.  
 Only some ice trees spawn there and only the three mobs listed above and Polar Bears.
