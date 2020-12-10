@@ -1,0 +1,13 @@
+{
+  "type": "santasworkshop:santas_workshop",
+  "generator": {
+    "biome_source": {
+      "seed": 0,
+      "type": "minecraft:fixed",
+      "biome": "santasworkshop:north_pole"
+    },
+    "seed": 0,
+    "settings": "santasworkshop:santas_workshop",
+    "type": "minecraft:noise"
+  }
+}

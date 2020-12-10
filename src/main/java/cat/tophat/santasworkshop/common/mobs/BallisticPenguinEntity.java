@@ -35,6 +35,13 @@ public class BallisticPenguinEntity extends MonsterEntity implements IAnimatable
         experienceValue = 5;
     }
 
+    public static AttributeModifierMap.MutableAttribute createBallisticPenguinAttributes() {
+        return MonsterEntity.func_234295_eP_()
+                .createMutableAttribute(Attributes.MAX_HEALTH, 15.0D)
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 1.0F)
+                .createMutableAttribute(Attributes.ARMOR, 1.0F);
+    }
+
     @Override
     protected void registerGoals() {
         goalSelector.addGoal(1, new SwimGoal(this));
@@ -60,13 +67,6 @@ public class BallisticPenguinEntity extends MonsterEntity implements IAnimatable
     protected void registerData() {
         super.registerData();
         dataManager.register(ATTACKING, false);
-    }
-
-    public static AttributeModifierMap.MutableAttribute createBallisticPenguinAttributes() {
-        return MonsterEntity.func_234295_eP_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 15.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 1.0F)
-                .createMutableAttribute(Attributes.ARMOR, 1.0F);
     }
 
     @Override

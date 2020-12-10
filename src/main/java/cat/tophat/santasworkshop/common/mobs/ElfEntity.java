@@ -19,16 +19,28 @@ import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import software.bernie.geckolib3.core.IAnimatable;
+import software.bernie.geckolib3.core.PlayState;
+import software.bernie.geckolib3.core.builder.AnimationBuilder;
+import software.bernie.geckolib3.core.controller.AnimationController;
+import software.bernie.geckolib3.core.event.predicate.AnimationEvent;
 import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 public class ElfEntity extends MonsterEntity implements IAnimatable {
 
     private static final DataParameter<Boolean> ATTACKING = EntityDataManager.createKey(ElfEntity.class, DataSerializers.BOOLEAN);
+    private AnimationFactory FACTORY = new AnimationFactory(this);
 
     public ElfEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
         experienceValue = 2;
+    }
+
+    public static AttributeModifierMap.MutableAttribute createElfAttributes() {
+        return MonsterEntity.func_234295_eP_()
+                .createMutableAttribute(Attributes.MAX_HEALTH, 8.0D)
+                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 1.0F)
+                .createMutableAttribute(Attributes.ARMOR, 1.0F);
     }
 
     @Override
@@ -56,20 +68,18 @@ public class ElfEntity extends MonsterEntity implements IAnimatable {
         dataManager.register(ATTACKING, false);
     }
 
-    public static AttributeModifierMap.MutableAttribute createElfAttributes() {
-        return MonsterEntity.func_234295_eP_()
-                .createMutableAttribute(Attributes.MAX_HEALTH, 8.0D)
-                .createMutableAttribute(Attributes.MOVEMENT_SPEED, 1.0F)
-                .createMutableAttribute(Attributes.ARMOR, 1.0F);
+    private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
+        event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.elf.walking", true));
+        return PlayState.CONTINUE;
     }
 
     @Override
     public void registerControllers(AnimationData animationData) {
-
+        animationData.addAnimationController(new AnimationController(this, "controller", 0, this::predicate));
     }
 
     @Override
     public AnimationFactory getFactory() {
-        return null;
+        return this.FACTORY;
     }
 }

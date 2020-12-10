@@ -1,6 +1,10 @@
 package cat.tophat.santasworkshop;
 
 import cat.tophat.santasworkshop.client.ClientHandler;
+import cat.tophat.santasworkshop.common.init.InitMobs;
+import cat.tophat.santasworkshop.common.mobs.BallisticPenguinEntity;
+import cat.tophat.santasworkshop.common.mobs.ElfEntity;
+import net.minecraft.entity.ai.attributes.GlobalEntityTypeAttributes;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -28,9 +32,12 @@ public class SantasWorkshop {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() ->
-        {
-
+        event.enqueueWork(() -> {
+            GlobalEntityTypeAttributes.put(InitMobs.BALLISTIC_PENGUIN,
+                    BallisticPenguinEntity.createBallisticPenguinAttributes().create());
+            GlobalEntityTypeAttributes.put(InitMobs.ELF_ENTITY,
+                    ElfEntity.createElfAttributes().create());
+            //TODO Add in Nicholas the Regegade when ready.
         });
     }
 }

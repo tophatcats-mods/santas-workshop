@@ -41,7 +41,7 @@ repositories {
 
 dependencies {
     minecraft "net.minecraftforge:forge:${project.mc_version}-${project.forge_version}"
-    implementation fg.deobf('software.bernie.geckolib:forge-1.15.2-geckolib:3.0.0-beta.10')
+    implementation fg.deobf('software.bernie.geckolib:forge-1.16.4-geckolib:3.0.0-beta.10')
     //Examples.
     //compile fg.deobf("net.darkhax.bookshelf:Bookshelf-${project.bookshelf_version}")
     //runtimeOnly fg.deobf("mezz.jei:jei-${project.jei_version}")
