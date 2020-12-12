@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"walk": {
+		"walking": {
 			"loop": true,
 			"animation_length": 1,
 			"bones": {
@@ -32,7 +32,7 @@
 				}
 			}
 		},
-		"transitiontoflight": {
+		"launching": {
 			"animation_length": 0.52,
 			"bones": {
 				"body": {
@@ -139,7 +139,7 @@
 				}
 			}
 		},
-		"flight": {
+		"attacking": {
 			"loop": true,
 			"animation_length": 1.04,
 			"bones": {

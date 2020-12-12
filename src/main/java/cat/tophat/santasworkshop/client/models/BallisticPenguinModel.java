@@ -19,6 +19,6 @@ public class BallisticPenguinModel extends AnimatedGeoModel<BallisticPenguinEnti
 
     @Override
     public ResourceLocation getAnimationFileLocation(BallisticPenguinEntity entity) {
-        return new ResourceLocation(SantasWorkshop.MOD_ID, "animations/ballisticpenguin.animation.json");
+        return new ResourceLocation(SantasWorkshop.MOD_ID, "animations/mobs/ballisticpenguin.animation.json");
     }
 }
